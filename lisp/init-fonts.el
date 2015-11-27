@@ -29,6 +29,10 @@ This is helpful for writeroom-mode, in particular."
 (add-hook 'visual-fill-column-mode-hook
           'sanityinc/maybe-adjust-visual-fill-column)
 
+;;; Set the default font
+
+(add-to-list 'default-frame-alist
+             '(font . "Source Code Pro-12"))
 
 
 (provide 'init-fonts)

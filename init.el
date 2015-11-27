@@ -64,7 +64,7 @@
 (require 'init-recentf)
 (require 'init-ido)
 (require 'init-hippie-expand)
-(require 'init-auto-complete)
+(require 'init-company)
 (require 'init-windows)
 (require 'init-sessions)
 (require 'init-fonts)
@@ -96,8 +96,11 @@
 (require 'init-haskell)
 (require 'init-elm)
 (require 'init-ruby-mode)
+(require 'init-rspec-mode)
 (require 'init-rails)
 (require 'init-sql)
+
+(require 'init-web-mode)
 
 (require 'init-paredit)
 (require 'init-lisp)
