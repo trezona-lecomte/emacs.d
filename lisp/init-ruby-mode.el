@@ -103,6 +103,11 @@
   (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))
 
 
+;;; ruby-end
+
+(require-package 'ruby-end)
+
+
 ;;----------------------------------------------------------------------------
 ;; Ruby - my convention for heredocs containing SQL
 ;;----------------------------------------------------------------------------
@@ -122,7 +127,7 @@
 ;;          :delimiter-mode nil)))
 ;;      (mmm-add-mode-ext-class 'ruby-mode "\\.rb\\'" 'ruby-heredoc-sql)))
 
-;(add-to-list 'mmm-set-file-name-for-modes 'ruby-mode)
+                                        ;(add-to-list 'mmm-set-file-name-for-modes 'ruby-mode)
 
 
 

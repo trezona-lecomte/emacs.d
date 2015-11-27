@@ -96,8 +96,11 @@
 (require 'init-haskell)
 (require 'init-elm)
 (require 'init-ruby-mode)
+(require 'init-rspec-mode)
 (require 'init-rails)
 (require 'init-sql)
+
+(require 'init-web-mode)
 
 (require 'init-paredit)
 (require 'init-lisp)
