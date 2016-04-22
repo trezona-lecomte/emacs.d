@@ -19,7 +19,7 @@
       (eval-region (min (point) (mark)) (max (point) (mark)))
     (pp-eval-last-sexp prefix)))
 
-(global-set-key (kbd "M-:") 'pp-eval-expression)
+(global-set-key [remap eval-expression] 'pp-eval-expression)
 
 (after-load 'lisp-mode
   (define-key emacs-lisp-mode-map (kbd "C-x C-e") 'sanityinc/eval-last-sexp-or-region))
@@ -297,5 +297,7 @@
     (when (fboundp 'aggressive-indent-indent-defun)
       (aggressive-indent-indent-defun))))
 
+
+(maybe-require-package 'cask-mode)
 
 (provide 'init-lisp)
