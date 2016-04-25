@@ -8,6 +8,7 @@
                "\\.gemspec\\'" "Gemfile\\'" "Kirkfile\\'")
 
 (setq ruby-use-encoding-map nil)
+(setq ruby-insert-encoding-magic-comment nil)
 
 (after-load 'ruby-mode
   (define-key ruby-mode-map (kbd "TAB") 'indent-for-tab-command)
