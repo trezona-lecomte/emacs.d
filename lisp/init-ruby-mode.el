@@ -53,6 +53,7 @@
     (add-hook hook
               (lambda () (sanityinc/local-push-company-backend 'company-robe)))))
 
+(setq robe-highlight-capf-candidates nil)
 
 
 ;; Customise highlight-symbol to not highlight do/end/class/def etc.
