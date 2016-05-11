@@ -98,6 +98,7 @@
 (require 'init-elm)
 (require 'init-ruby-mode)
 (require 'init-rspec-mode)
+(require 'alchemist)
 (require 'init-rails)
 (require 'init-sql)
 
