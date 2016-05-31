@@ -79,6 +79,7 @@
 (require 'init-git)
 (require 'init-github)
 
+(require 'init-alchemist)
 (require 'init-compile)
 (require 'init-crontab)
 (require 'init-textile)
@@ -98,7 +99,7 @@
 (require 'init-elm)
 (require 'init-ruby-mode)
 (require 'init-rspec-mode)
-(require 'alchemist)
+(require 'init-feature-mode)
 (require 'init-rails)
 (require 'init-sql)
 

@@ -4,7 +4,7 @@
 (setq rspec-spec-command "bundle exec spring rspec")
 (setq rspec-use-bundler-when-possible nil)
 (setq rspec-use-spring-when-possible nil)
-(setq rspec-primary-source-dirs '("app" "lib" "core"))
+(setq rspec-primary-source-dirs '("app" "lib" "core" "psnz" "psau" "psuk"))
 (setq rspec-command-options "--color")
 
 ;;; Enable binding.pry & byebug in spec compilation:
