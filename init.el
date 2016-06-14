@@ -120,6 +120,8 @@
 
 (require 'init-dash)
 (require 'init-ledger)
+
+(require 'init-preferences)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
