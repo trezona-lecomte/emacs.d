@@ -14,23 +14,20 @@
 ;;; TODO: only redefine this key if we're in the Powershop repo:
 (define-key rspec-verifiable-mode-keymap (kbd "v") 'powershop-rspec-verify)
 
-(defun powershop-rspec-verify ()
+(defconst powershop-markets '("nz" "au" "uk"))
+(defvar powershop-rspec-verify-history nil)
+
+(defun powershop-rspec-verify (market)
   "Run spec for the current buffer in the specified market."
-  (interactive)
-  (let ((market (read-string "Market: " (last-specced-market))))
-    (setq rspec-spec-command (concat "PS_MARKET=" market
-                                     " bundle exec spring rspec")))
-  (rspec-verify))
-
-(defun last-specced-market ()
-  (car (filter 'is-market-label minibuffer-history)))
-
-(defun is-market-label (str)
-  (member str '("nz" "au" "uk")))
-
-(defun filter (condp lst)
-  (delq nil
-        (mapcar (lambda (x) (and (funcall condp x) x)) lst)))
+  (interactive
+   (list (completing-read "Market: " powershop-markets nil t
+                          nil
+                          'powershop-rspec-verify-history
+                          (or (car powershop-rspec-verify-history) "uk")
+                          )))
+  (let ((rspec-spec-command
+         (format "PS_MARKET=%s bundle exec spring rspec" market)))
+    (rspec-verify)))
 
 ;; (defun powershop-migrate-all ()
 ;;   "Migrate all powershop market development databases"
