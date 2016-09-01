@@ -6,6 +6,7 @@
                "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'"
                "\\.rjs\\'" "\\.irbrc\\'" "\\.pryrc\\'" "\\.builder\\'" "\\.ru\\'"
                "\\.gemspec\\'" "Gemfile\\'" "Kirkfile\\'")
+(add-auto-mode 'conf-mode "Gemfile\\.lock\\'")
 
 (setq ruby-use-encoding-map nil)
 (setq ruby-insert-encoding-magic-comment nil)
@@ -24,6 +25,8 @@
 
 (after-load 'page-break-lines
   (push 'ruby-mode page-break-lines-modes))
+
+(require-package 'rspec-mode)
 
 
 ;;; Inferior ruby
