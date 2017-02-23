@@ -51,10 +51,10 @@
 
 (defun powershop-start-spring-if-not-running ()
   (if (string-match-p "Spring is not running"
-                      (shell-command-to-string (format "cd %s ; PS_MARKET=%s bundle exec spring status" (shell-quote-argument (rspec-project-root)) (shell-quote-argument market))))
+                      (shell-command-to-string (format "cd %s && PS_MARKET=%s bundle exec spring status" (shell-quote-argument (rspec-project-root)) (shell-quote-argument market))))
       (progn
         (message (format "Powershop RSpec: Starting spring in %s" market))
-        (shell-command (format "cd %s ; PS_MARKET=%s bundle exec spring server&" (shell-quote-argument (rspec-project-root)) (shell-quote-argument market))))
+        (shell-command (format "cd %s && PS_MARKET=%s bundle exec spring server&" (shell-quote-argument (rspec-project-root)) (shell-quote-argument market))))
     (message (format "Powershop RSpec: Spring already running in %s, using existing server." market))))
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
