@@ -20,30 +20,42 @@
   "Run spec for the current buffer in the specified market."
   (interactive
    (list (powershop-read-market)))
+  (powershop-start-spring-if-not-running)
   (powershop-override-rspec-function 'rspec-verify))
 
 (defun powershop-rspec-verify-single (market)
   "Run spec for the current example in the specified market."
   (interactive
    (list (powershop-read-market)))
+  (powershop-start-spring-if-not-running)
   (powershop-override-rspec-function 'rspec-verify-single))
 
 (defun powershop-rspec-rerun (market)
   "Re-run the last RSpec invocation in the specified market."
   (interactive
    (list (powershop-read-market)))
+  (powershop-start-spring-if-not-running)
   (powershop-override-rspec-function 'rspec-rerun))
 
 (defun powershop-rspec-run-last-failed (market)
   "Run just the specs that failed during the last invocation in the specified market."
   (interactive
    (list (powershop-read-market)))
+  (powershop-start-spring-if-not-running)
   (powershop-override-rspec-function 'rspec-run-last-failed))
 
 (defun powershop-override-rspec-function (rspec-function)
   (let ((rspec-spec-command
          (format "PS_MARKET=%s bundle exec spring rspec" market)))
     (funcall rspec-function)))
+
+(defun powershop-start-spring-if-not-running ()
+  (if (string-match-p "Spring is not running"
+                      (shell-command-to-string (format "cd %s ; PS_MARKET=%s bundle exec spring status" (rspec-project-root) market)))
+      (progn
+        (message (format "Powershop RSpec: Starting spring in %s" market))
+        (shell-command (format "cd %s ; PS_MARKET=%s bundle exec spring server&" (rspec-project-root) market)))
+    (message (format "Powershop RSpec: Spring already running in %s, using existing server." market))))
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
