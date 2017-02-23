@@ -8,7 +8,7 @@
 (setq rspec-use-bundler-when-possible nil)
 (setq rspec-use-spring-when-possible nil)
 (setq rspec-primary-source-dirs '("app" "lib" "core" "psnz" "psau" "psuk"))
-(setq rspec-command-options "--color --format documentation")
+(setq rspec-command-options "--color")
 
 (define-key rspec-verifiable-mode-keymap (kbd "v") 'powershop-rspec-verify)
 (define-key rspec-verifiable-mode-keymap (kbd "r") 'powershop-rspec-rerun)
