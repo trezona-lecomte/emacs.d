@@ -11,7 +11,9 @@
 (setq rspec-command-options "--color --format documentation")
 
 (define-key rspec-verifiable-mode-keymap (kbd "v") 'powershop-rspec-verify)
+(define-key rspec-verifiable-mode-keymap (kbd "r") 'powershop-rspec-rerun)
 (define-key rspec-mode-keymap (kbd "s") 'powershop-rspec-verify-single)
+
 
 (defun powershop-rspec-verify (market)
   "Run spec for the current buffer in the specified market."
@@ -24,6 +26,13 @@
   (interactive
    (list (powershop-read-market)))
   (powershop-override-rspec-function 'rspec-verify-single))
+
+(defun powershop-rspec-rerun (market)
+  "Re-run the last RSpec invocation in the specified market."
+  (interactive
+   (list (powershop-read-market)))
+  (powershop-override-rspec-function 'rspec-rerun))
+
 
 (defun powershop-override-rspec-function (rspec-function)
   (let ((rspec-spec-command
