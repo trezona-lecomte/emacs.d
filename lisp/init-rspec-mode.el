@@ -12,6 +12,7 @@
 
 (define-key rspec-verifiable-mode-keymap (kbd "v") 'powershop-rspec-verify)
 (define-key rspec-verifiable-mode-keymap (kbd "r") 'powershop-rspec-rerun)
+(define-key rspec-verifiable-mode-keymap (kbd "f") 'powershop-rspec-run-last-failed)
 (define-key rspec-mode-keymap (kbd "s") 'powershop-rspec-verify-single)
 
 
@@ -33,6 +34,11 @@
    (list (powershop-read-market)))
   (powershop-override-rspec-function 'rspec-rerun))
 
+(defun powershop-rspec-run-last-failed (market)
+  "Run just the specs that failed during the last invocation in the specified market."
+  (interactive
+   (list (powershop-read-market)))
+  (powershop-override-rspec-function 'rspec-run-last-failed))
 
 (defun powershop-override-rspec-function (rspec-function)
   (let ((rspec-spec-command
