@@ -3,5 +3,6 @@
 (setq truncate-lines t)
 (setq ring-bell-function 'ignore)
 
+(global-set-key (kbd "C-x C-f") 'find-file)
 
 (provide 'init-preferences)
