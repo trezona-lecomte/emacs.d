@@ -39,7 +39,9 @@
 (maybe-require-package 'hayoo)
 (after-load 'haskell-mode
   (define-key haskell-mode-map (kbd "C-c h") 'hoogle)
-  (define-key haskell-mode-map (kbd "C-o") 'open-line))
+  (define-key haskell-mode-map (kbd "C-o") 'open-line)
+  (define-key haskell-mode-map (kbd "M-g n") 'flycheck-next-error)
+  (define-key haskell-mode-map (kbd "M-g p") 'flycheck-previous-error))
 
 
 (after-load 'page-break-lines

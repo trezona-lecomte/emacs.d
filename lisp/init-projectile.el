@@ -14,5 +14,6 @@
            " Pr"
          (format " Pr[%s]" (projectile-project-name)))))))
 
+(global-set-key (kbd "C-c C-f") 'projectile-find-file)
 
 (provide 'init-projectile)

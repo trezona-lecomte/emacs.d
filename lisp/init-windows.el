@@ -11,6 +11,8 @@
 (setq-default switch-window-timeout nil)
 (global-set-key (kbd "C-x o") 'switch-window)
 
+;; Make "C-x w" bound to swapping the buffers in two windows
+(global-set-key (kbd "C-x w") 'switch-window-then-swap-buffer)
 
 ;;----------------------------------------------------------------------------
 ;; When splitting window, show (other-buffer) in the new window
