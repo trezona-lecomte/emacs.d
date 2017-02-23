@@ -18,7 +18,10 @@
 
 (after-load 'magit
   (define-key magit-status-mode-map (kbd "C-M-<up>") 'magit-section-up)
-  (add-hook 'magit-popup-mode-hook 'sanityinc/no-trailing-whitespace))
+  (add-hook 'magit-popup-mode-hook 'sanityinc/no-trailing-whitespace)
+  ;; (setq magit-diff-auto-show nil)
+  ;; (add-hook 'git-commit-mode-hook (lambda () (save-selected-window (magit-process))))
+  )
 
 (require-package 'fullframe)
 (after-load 'magit
