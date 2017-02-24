@@ -55,6 +55,7 @@
   (defun sanityinc/colourise-compilation-buffer ()
     (when (eq major-mode 'compilation-mode)
       (ansi-color-apply-on-region compilation-filter-start (point-max))))
-  (add-hook 'compilation-filter-hook 'sanityinc/colourise-compilation-buffer))
+  (add-hook 'compilation-filter-hook 'sanityinc/colourise-compilation-buffer)
+  (setq compilation-scroll-output nil))
 
 (provide 'init-compile)
