@@ -129,6 +129,7 @@
 (require 'init-ledger)
 
 (require 'init-preferences)
+(require 'init-helper-functions)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
