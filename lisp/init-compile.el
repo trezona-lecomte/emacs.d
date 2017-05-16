@@ -58,4 +58,8 @@
   (add-hook 'compilation-filter-hook 'sanityinc/colourise-compilation-buffer)
   (setq compilation-scroll-output nil))
 
+
+(maybe-require-package 'cmd-to-echo)
+
+
 (provide 'init-compile)
