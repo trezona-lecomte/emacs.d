@@ -35,6 +35,7 @@ Fix for the above hasn't been released as of Emacs 25.2."
 
     (add-hook 'sql-mode-hook 'sanityinc/maybe-set-dash-db-docset)
     (add-hook 'sql-interactive-mode-hook 'sanityinc/maybe-set-dash-db-docset)
+    (add-hook 'sql-interactive-mode-hook '(lambda () (toggle-truncate-lines t)))
     (defadvice sql-set-product (after set-dash-docset activate)
       (sanityinc/maybe-set-dash-db-docset))))
 
