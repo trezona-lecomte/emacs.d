@@ -1,6 +1,7 @@
 (require-package 'osx-browse)
 
 (setq browse-url-dwim-always-confirm-extraction nil)
+(setq browse-url-browser-function 'browse-url-chrome)
 
 (osx-browse-mode 1)
 
