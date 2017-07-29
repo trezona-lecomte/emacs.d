@@ -15,5 +15,6 @@
          (format " Pr[%s]" (projectile-project-name)))))))
 
 (global-set-key (kbd "C-c C-f") 'projectile-find-file)
+(global-set-key (kbd "C-c C-.") 'projectile-rails-goto-file-at-point)
 
 (provide 'init-projectile)
