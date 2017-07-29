@@ -4,6 +4,8 @@
 (add-auto-mode 'tcl-mode "Portfile\\'")
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(setq fill-column 80)
+
 (add-hook 'prog-mode-hook 'goto-address-prog-mode)
 (setq goto-address-mail-face 'link)
 
