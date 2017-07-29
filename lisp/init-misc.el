@@ -30,5 +30,21 @@
 
 (add-auto-mode 'conf-mode "Procfile")
 
+(define-key global-map (kbd "C-c C-j") 'trezona/insert-line-above)
+(define-key global-map (kbd "C-c C-n") 'trezona/insert-line-below)
+
+(defun trezona/insert-line-above ()
+  "Insert a new line above the current line."
+  (interactive)
+  (save-excursion
+    (end-of-line 0)
+    (open-line 1)))
+
+(defun trezona/insert-line-below ()
+  "Insert a new line below the current line."
+  (interactive)
+  (save-excursion
+    (end-of-line)
+    (open-line 1)))
 
 (provide 'init-misc)
