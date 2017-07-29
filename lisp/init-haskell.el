@@ -13,6 +13,7 @@
     (intero-global-mode)
     (add-hook 'haskell-mode-hook 'eldoc-mode))
   (after-load 'intero
+    (define-key intero-mode-map (kbd "M-?") 'sanityinc/counsel-ag-project)
     (after-load 'flycheck
       (flycheck-add-next-checker 'intero
                                  '(warning . haskell-hlint)))))
