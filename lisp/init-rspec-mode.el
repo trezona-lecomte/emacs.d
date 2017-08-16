@@ -67,7 +67,4 @@
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
-(eval-after-load 'rspec-mode
-  '(rspec-install-snippets))
-
 (provide 'init-rspec-mode)
