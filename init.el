@@ -60,6 +60,7 @@
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-flycheck)
+(require 'init-rubocop)
 
 (require 'init-recentf)
 (require 'init-smex)
