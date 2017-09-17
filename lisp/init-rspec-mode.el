@@ -2,7 +2,7 @@
 (require-package 'rspec-mode)
 
 (require 'rspec-mode)
-(require 'init-powershop-markets)
+(require 'init-flux-markets)
 
 (setq rspec-spec-command " bundle exec spring rspec")
 (setq rspec-use-bundler-when-possible nil)
@@ -10,54 +10,54 @@
 (setq rspec-primary-source-dirs '("app" "lib" "core" "psnz" "psau" "psuk"))
 (setq rspec-command-options "--color")
 
-(define-key rspec-verifiable-mode-keymap (kbd "v") 'powershop-rspec-verify)
-(define-key rspec-verifiable-mode-keymap (kbd "r") 'powershop-rspec-rerun)
-(define-key rspec-verifiable-mode-keymap (kbd "f") 'powershop-rspec-run-last-failed)
-(define-key rspec-verifiable-mode-keymap (kbd "s") 'powershop-rspec-verify-method)
-(define-key rspec-mode-keymap (kbd "s") 'powershop-rspec-verify-single)
+(define-key rspec-verifiable-mode-keymap (kbd "v") 'flux-rspec-verify)
+(define-key rspec-verifiable-mode-keymap (kbd "r") 'flux-rspec-rerun)
+(define-key rspec-verifiable-mode-keymap (kbd "f") 'flux-rspec-run-last-failed)
+(define-key rspec-verifiable-mode-keymap (kbd "s") 'flux-rspec-verify-method)
+(define-key rspec-mode-keymap (kbd "s") 'flux-rspec-verify-single)
 
 
-(defun powershop-rspec-verify (market)
+(defun flux-rspec-verify (market)
   "Run spec for the current buffer in the specified market."
   (interactive
-   (list (powershop-read-market)))
-  (powershop-start-spring-if-not-running)
-  (powershop-override-rspec-function 'rspec-verify))
+   (list (flux-read-market)))
+  (flux-start-spring-if-not-running)
+  (flux-override-rspec-function 'rspec-verify))
 
-(defun powershop-rspec-verify-single (market)
+(defun flux-rspec-verify-single (market)
   "Run spec for the current example in the specified market."
   (interactive
-   (list (powershop-read-market)))
-  (powershop-start-spring-if-not-running)
-  (powershop-override-rspec-function 'rspec-verify-single))
+   (list (flux-read-market)))
+  (flux-start-spring-if-not-running)
+  (flux-override-rspec-function 'rspec-verify-single))
 
-(defun powershop-rspec-verify-method (market)
+(defun flux-rspec-verify-method (market)
   "Run spec for the current example in the specified market."
   (interactive
-   (list (powershop-read-market)))
-  (powershop-start-spring-if-not-running)
-  (powershop-override-rspec-function 'rspec-verify-method))
+   (list (flux-read-market)))
+  (flux-start-spring-if-not-running)
+  (flux-override-rspec-function 'rspec-verify-method))
 
-(defun powershop-rspec-rerun (market)
+(defun flux-rspec-rerun (market)
   "Re-run the last RSpec invocation in the specified market."
   (interactive
-   (list (powershop-read-market)))
-  (powershop-start-spring-if-not-running)
-  (powershop-override-rspec-function 'rspec-rerun))
+   (list (flux-read-market)))
+  (flux-start-spring-if-not-running)
+  (flux-override-rspec-function 'rspec-rerun))
 
-(defun powershop-rspec-run-last-failed (market)
+(defun flux-rspec-run-last-failed (market)
   "Run just the specs that failed during the last invocation in the specified market."
   (interactive
-   (list (powershop-read-market)))
-  (powershop-start-spring-if-not-running)
-  (powershop-override-rspec-function 'rspec-run-last-failed))
+   (list (flux-read-market)))
+  (flux-start-spring-if-not-running)
+  (flux-override-rspec-function 'rspec-run-last-failed))
 
-(defun powershop-override-rspec-function (rspec-function)
+(defun flux-override-rspec-function (rspec-function)
   (let ((rspec-spec-command
          (format "PS_MARKET=%s bundle exec spring rspec" market)))
     (funcall rspec-function)))
 
-(defun powershop-start-spring-if-not-running ()
+(defun flux-start-spring-if-not-running ()
   (if (string-match-p "Spring is not running"
                       (shell-command-to-string (format "cd %s && PS_MARKET=%s bundle exec spring status" (shell-quote-argument (rspec-project-root)) (shell-quote-argument market))))
       (progn
