@@ -1,3 +1,5 @@
+(global-set-key (kbd "C-x C-f") 'find-file)
+
 (require-package 'unfill)
 
 (when (fboundp 'electric-pair-mode)
@@ -75,11 +77,6 @@
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 
-
-(when (fboundp 'global-prettify-symbols-mode)
-  (global-prettify-symbols-mode))
-
-
 (require-package 'undo-tree)
 (global-undo-tree-mode)
 (diminish 'undo-tree-mode)
@@ -151,7 +148,8 @@
 (global-set-key (kbd "C-x C-.") 'pop-global-mark)
 
 (when (maybe-require-package 'avy)
-  (global-set-key (kbd "C-;") 'avy-goto-char-timer))
+  (global-set-key (kbd "C-;") 'avy-goto-char-timer)
+  (global-set-key (kbd "C-:") 'avy-goto-char))
 
 (require-package 'multiple-cursors)
 ;; multiple-cursors

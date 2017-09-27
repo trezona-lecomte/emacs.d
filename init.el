@@ -81,17 +81,14 @@
 (require 'init-git)
 (require 'init-github)
 
-(require 'init-alchemist)
 (require 'init-projectile)
 
 (require 'init-compile)
-;;(require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)
 (require 'init-csv)
 (require 'init-erlang)
 (require 'init-javascript)
-(require 'init-php)
 (require 'init-org)
 (require 'init-nxml)
 (require 'init-html)
@@ -111,16 +108,11 @@
 (require 'init-toml)
 (require 'init-yaml)
 (require 'init-docker)
-(maybe-require-package 'terraform-mode)
-
 (require 'init-web-mode)
 
 (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-slime)
-(unless (version<= emacs-version "24.2")
-  (require 'init-clojure)
-  (require 'init-clojure-cider))
 (require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
@@ -130,10 +122,13 @@
 
 (require 'init-folding)
 (require 'init-dash)
-(require 'init-ledger)
+;; (require 'init-ledger)
 
-(require 'init-preferences)
 (require 'init-helper-functions)
+
+(setq truncate-lines t)
+(setq ring-bell-function 'ignore)
+
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)

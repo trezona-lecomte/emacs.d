@@ -1,7 +1,7 @@
 ;;; Generic helper functions that are useful across different modes
 
-(defun copy-current-buffer-path-to-clipboard ()
-  "Put the current buffer's path on the clipboard"
+(defun ktlc/copy-current-buffer-path-to-clipboard ()
+  "Put the current buffer's path on the clipboard."
   (interactive)
   (let ((filename (if (equal major-mode 'dired-mode)
                       default-directory
@@ -15,6 +15,7 @@
 
 (require 'cl-lib)
 (defun sum-numbers-in-region (start end)
+  "Display the sum of the numbers between START and END."
   (interactive "r")
   (message "%s"
            (cl-reduce #'+
