@@ -60,7 +60,6 @@
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-flycheck)
-(require 'init-rubocop)
 
 (require 'init-recentf)
 (require 'init-smex)
@@ -102,6 +101,7 @@
 (require 'init-ruby-mode)
 (require 'init-rspec-mode)
 (require 'init-feature-mode)
+(require 'init-rubocop)
 (require 'init-rails)
 (require 'init-sql)
 (require 'init-rust)
