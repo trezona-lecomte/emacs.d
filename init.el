@@ -68,12 +68,13 @@
 (require 'init-company)
 (require 'init-windows)
 (require 'init-sessions)
-(require 'init-fonts)
 (require 'init-mmm)
 
 (require 'init-editing-utils)
 (require 'init-whitespace)
 (require 'init-prettify-symbols)
+(require 'init-center-cursor)
+(require 'init-fonts)
 
 (require 'init-vc)
 (require 'init-darcs)
