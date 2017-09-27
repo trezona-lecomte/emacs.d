@@ -1,0 +1,10 @@
+(require-package 'yasnippet)
+(require-package 'yasnippet-snippets)
+
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"))
+
+(yas-global-mode 1)
+
+
+(provide 'init-snippets)

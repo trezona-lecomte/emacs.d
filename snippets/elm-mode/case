@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: case
+# key: case
+# --
+case ${1:x} of
+    ${2:a} ->
+        $0

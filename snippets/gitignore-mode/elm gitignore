@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: elm gitignore
+# key: gitignore
+# --
+elm-stuff
+repl-temp-*
+elm.js

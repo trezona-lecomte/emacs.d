@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: init
+# key: init
+# --
+init : ( Model, Cmd Msg )
+init =
+    ( ${1:initialModel}, ${3:Cmd.none} )$0

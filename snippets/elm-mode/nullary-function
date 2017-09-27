@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: nullary-function
+# key: f0
+# --
+${1:name} : ${2:ReturnType}
+$1 =
+    $0

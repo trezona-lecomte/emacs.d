@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: notify_squash
+# name: notify-squash
+# --
+ExceptionNotifier::Notifier.deliver_backend_exception_notification ${1:e}, "${2:Done goofed}"$0

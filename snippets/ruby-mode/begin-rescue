@@ -1,0 +1,8 @@
+# key: begin-rescue
+# name: begin-rescue
+# --
+begin
+  $0
+rescue ${1:StandardError} => e
+
+end

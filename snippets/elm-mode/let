@@ -1,0 +1,8 @@
+# key: let
+# name: let
+# --
+let
+    ${1:binding} =
+        ${2:value}
+in
+    $0

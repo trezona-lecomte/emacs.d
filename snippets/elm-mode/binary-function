@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: binary-function
+# key: f2
+# --
+${1:name} : ${2:Arg} -> ${3:Arg} -> ${4:ReturnType}
+$1 ${5:arg} ${6:arg} =
+    $0

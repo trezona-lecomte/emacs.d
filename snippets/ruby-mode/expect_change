@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: expect-change
+# key: expect_change
+# --
+expect { ${1:action} }.to change { ${2:obersvable} }.from(${3:initial}).to(${4:expected})$0

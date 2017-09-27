@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: view
+# key: view
+# --
+view : Model -> Html Msg
+view model =
+    div []
+        [ $0
+        ]

@@ -82,6 +82,7 @@
 (require 'init-github)
 
 (require 'init-projectile)
+(require 'init-snippets)
 
 (require 'init-compile)
 (require 'init-textile)

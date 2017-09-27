@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: update
+# key: update
+# --
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        ${1:MsgA} ->
+            ( model, Cmd.none )

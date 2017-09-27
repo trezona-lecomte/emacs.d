@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: div
+# name: div
+# --
+div [ ${1:attr} ]
+    [ $0
+    ]

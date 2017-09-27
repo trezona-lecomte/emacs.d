@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: scope
+# key: scope
+# --
+scope :${1:name}, -> { $0 }

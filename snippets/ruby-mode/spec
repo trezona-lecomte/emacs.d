@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: spec
+# key: spec
+# --
+require 'spec_helper'
+
+describe ${1:DescribedClass} do
+  context '${2:when}' do
+    it '${3:does a thing}' do
+      $0
+    end
+  end
+end
