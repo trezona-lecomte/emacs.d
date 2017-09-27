@@ -74,6 +74,7 @@
 
 (require 'init-editing-utils)
 (require 'init-whitespace)
+(require 'init-prettify-symbols)
 
 (require 'init-vc)
 (require 'init-darcs)

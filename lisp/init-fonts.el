@@ -18,7 +18,7 @@ This is helpful for writeroom-mode, in particular."
 ;;; Set the default font
 
 (add-to-list 'default-frame-alist
-             '(font . "Source Code Pro-12"))
+             '(font . "PragmataPro Mono-12"))
 
 
 (provide 'init-fonts)
