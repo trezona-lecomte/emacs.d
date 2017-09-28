@@ -62,7 +62,7 @@
                       (shell-command-to-string (format "cd %s && DEPRECATION=%s PS_MARKET=%s bundle exec spring status" (shell-quote-argument (rspec-project-root)) "stderr" (shell-quote-argument market))))
       (progn
         (message (format "Powershop RSpec: Starting spring in %s" market))
-        (shell-command (format "cd %s && DEPRECATION=%s PS_MARKET=%s bundle exec spring server&" (shell-quote-argument (rspec-project-root)) "stderr" (shell-quote-argument market))))
+        (async-shell-command (format "cd %s && DEPRECATION=%s PS_MARKET=%s bundle exec spring server" (shell-quote-argument (rspec-project-root)) "stderr" (shell-quote-argument market)) (format "*%s spring server*" market)))
     (message (format "Powershop RSpec: Spring already running in %s, using existing server." market))))
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
