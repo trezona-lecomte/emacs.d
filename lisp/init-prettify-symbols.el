@@ -21,8 +21,7 @@
                 (vector (decode-char 'ucs (cadr s))))))
           '(("[ERROR]"   #XE380)
             ("[DEBUG]"   #XE381)
-            ("[
-INFO]"    #XE382)
+            ("[INFO]"    #XE382)
             ("[WARN]"    #XE383)
             ("[WARNING]" #XE384)
             ("[ERR]"     #XE385)
@@ -211,5 +210,11 @@ INFO]"    #XE382)
 
 (add-hook 'prog-mode-hook
           #'add-pragmatapro-prettify-symbols-alist)
+
+;; Turn on emojify-mode globally
+
+(when (fboundp 'global-emojify-mode)
+  (global-emojify-mode))
+
 
 (provide 'init-prettify-symbols)
