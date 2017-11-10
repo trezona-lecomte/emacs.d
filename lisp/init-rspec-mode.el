@@ -19,6 +19,12 @@
 (define-key rspec-verifiable-mode-keymap (kbd "s") 'flux/rspec-verify-method)
 (define-key rspec-mode-keymap (kbd "s") 'flux/rspec-verify-single)
 
+;; (define-key rspec-verifiable-mode-keymap (kbd "v") 'rspec-verify)
+;; (define-key rspec-verifiable-mode-keymap (kbd "r") 'rspec-rerun)
+;; (define-key rspec-verifiable-mode-keymap (kbd "f") 'rspec-run-last-failed)
+;; (define-key rspec-verifiable-mode-keymap (kbd "s") 'rspec-verify-method)
+;; (define-key rspec-mode-keymap (kbd "s") 'rspec-verify-single)
+
 
 (defun flux/run-specs (rspec-command market)
   (if (equal "all" market)

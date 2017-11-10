@@ -49,10 +49,12 @@
 
 
 
-(when (maybe-require-package 'beacon)
-  (setq-default beacon-lighter "")
-  (setq-default beacon-size 5)
-  (add-hook 'after-init-hook 'beacon-mode))
+;; (require-package 'beacon)
+
+;; (setq-default beacon-lighter "")
+;; (setq-default beacon-size 40)
+;; (setq-default beacon-color 0.5)
+;; (add-hook 'after-init-hook 'beacon-mode)
 
 
 
