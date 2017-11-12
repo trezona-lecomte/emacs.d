@@ -5,8 +5,8 @@
 (add-hook 'feature-mode-hook
           (lambda () (local-set-key (kbd "M-.") 'jump-to-cucumber-step)))
 
-(define-key feature-mode-map  (kbd "C-c ,v") 'powershop-feature-verify-all-scenarios-in-buffer)
-(define-key feature-mode-map  (kbd "C-c ,s") 'powershop-feature-verify-scenario-at-pos)
+(define-key feature-mode-map  (kbd "C-c ,v") 'flux/feature-verify-all-scenarios-in-buffer)
+(define-key feature-mode-map  (kbd "C-c ,s") 'flux/feature-verify-scenario-at-pos)
 
 (customize-set-value 'feature-cucumber-command "PS_MARKET={market} bundle exec spring cucumber {feature}{options}")
 (customize-set-value 'feature-root-marker-file-name ".git")
@@ -40,16 +40,16 @@
           (rvm-activate-corresponding-ruby))
       (compile (construct-cucumber-command feature-cucumber-command opts-str feature-arg market-arg) t))))
 
-(defun powershop-feature-verify-all-scenarios-in-buffer (market)
+(defun flux/feature-verify-all-scenarios-in-buffer (market)
   "Run all the scenarios defined in current buffer."
   (interactive
-   (list (powershop-read-market)))
+   (list (flux/read-market)))
   (feature-run-cucumber '() market :feature-file (buffer-file-name)))
 
-(defun powershop-feature-verify-scenario-at-pos (market &optional pos)
+(defun flux/feature-verify-scenario-at-pos (market &optional pos)
   "Run the scenario defined at pos.  If post is not specified the current buffer location will be used."
   (interactive
-   (list (powershop-read-market)))
+   (list (flux/read-market)))
   (feature-run-cucumber
    (number-to-string (line-number-at-pos))
    market
