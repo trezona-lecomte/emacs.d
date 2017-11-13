@@ -44,15 +44,18 @@
   "Run all the scenarios defined in current buffer."
   (interactive
    (list (flux/read-market)))
-  (feature-run-cucumber '() market :feature-file (buffer-file-name)))
+  (progn
+    (flux/start-spring-for-market market)
+    (feature-run-cucumber '() market :feature-file (buffer-file-name))))
 
 (defun flux/feature-verify-scenario-at-pos (market &optional pos)
   "Run the scenario defined at pos.  If post is not specified the current buffer location will be used."
   (interactive
    (list (flux/read-market)))
-  (feature-run-cucumber
-   (number-to-string (line-number-at-pos))
-   market
-   :feature-file (buffer-file-name)))
+  (progn
+    (flux/start-spring-for-market market)
+    (feature-run-cucumber (number-to-string (line-number-at-pos))
+                          market
+                          :feature-file (buffer-file-name))))
 
 (provide 'init-feature-mode)

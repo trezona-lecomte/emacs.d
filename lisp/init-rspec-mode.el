@@ -37,18 +37,6 @@
       (flux/start-spring-for-market market)
       (flux/run-specs-in-market rspec-command market))))
 
-(defun flux/start-spring-for-market (market)
-  (progn
-    (setq inhibit-message t)
-    (if (string-match-p "Spring is not running"
-                        (shell-command-to-string (format "cd %s && PS_MARKET=%s bundle exec spring status" (shell-quote-argument (rspec-project-root)) (shell-quote-argument market))))
-        (progn
-          (message (format "Powershop RSpec: Starting spring in %s" market))
-          (async-shell-command (format "cd %s && PS_MARKET=%s bundle exec spring server" (shell-quote-argument (rspec-project-root)) (shell-quote-argument market)) (format "*%s spring server*" market)))
-      (message (format "Powershop RSpec: Spring already running in %s, using existing server." market)))
-    (setq inhibit-message nil))
-  )
-
 (defun flux/run-specs-in-market (rspec-function market)
   (let ((rspec-spec-command
          (format "PS_MARKET=%s bundle exec spring rspec" market)))
