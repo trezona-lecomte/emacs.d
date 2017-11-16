@@ -3,5 +3,6 @@
   (after-load 'whitespace-cleanup-mode
     (push 'markdown-mode whitespace-cleanup-mode-ignore-modes)))
 
+(require-package 'flymd)
 
 (provide 'init-markdown)
