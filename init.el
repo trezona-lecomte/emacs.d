@@ -110,6 +110,7 @@
 (require 'init-yaml)
 (require 'init-docker)
 (require 'init-web-mode)
+(require 'init-terraform)
 
 (require 'init-paredit)
 (require 'init-lisp)
@@ -141,6 +142,7 @@
 (when *is-a-mac*
   (require-package 'osx-location))
 (maybe-require-package 'regex-tool)
+(maybe-require-package 'dotenv-mode)
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
