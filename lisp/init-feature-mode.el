@@ -3,7 +3,7 @@
 (require 'feature-mode)
 
 (add-hook 'feature-mode-hook
-          (lambda () (local-set-key (kbd "M-.") 'jump-to-cucumber-step)))
+          (lambda () (local-set-key (kbd "M-.") 'feature-goto-step-definition)))
 
 (define-key feature-mode-map  (kbd "C-c ,v") 'flux/feature-verify-all-scenarios-in-buffer)
 (define-key feature-mode-map  (kbd "C-c ,s") 'flux/feature-verify-scenario-at-pos)
