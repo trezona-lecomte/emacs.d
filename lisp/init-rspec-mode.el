@@ -4,6 +4,9 @@
 (require 'init-flux-markets)
 
 
+(define-key rspec-mode-keymap (kbd "C-)") 'paredit-forward-slurp-sexp)
+(define-key rspec-mode-keymap (kbd "C-(") 'paredit-backward-slurp-sexp)
+
 ;; Override the default rspec-spec-command and turn off built-in bundler & spring detection
 (setq rspec-spec-command " bundle exec spring rspec")
 (setq rspec-use-bundler-when-possible nil)
