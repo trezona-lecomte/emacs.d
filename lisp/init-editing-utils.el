@@ -38,9 +38,6 @@
 (add-hook 'after-init-hook 'transient-mark-mode)
 
 
-(when (maybe-require-package 'dynamic-spaces)
-  (dynamic-spaces-global-mode))
-
  ;;; A simple visible bell which works in all terminal types
 
 (defun sanityinc/flash-mode-line ()
