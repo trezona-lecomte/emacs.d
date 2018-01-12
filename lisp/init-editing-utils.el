@@ -49,6 +49,10 @@
 
 
 
+(setq-default fill-column 80)
+
+
+
 ;; (require-package 'beacon)
 
 ;; (setq-default beacon-lighter "")
