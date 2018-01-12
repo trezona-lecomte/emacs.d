@@ -17,7 +17,9 @@
     (setq ivy-virtual-abbreviate 'full
           ivy-rich-switch-buffer-align-virtual-buffer t)
 
-    (setq ivy-rich-switch-buffer-name-max-length 80)
+    (setq ivy-rich-switch-buffer-name-max-length 100)
+
+    (setq ivy-rich-switch-buffer-mode-max-length 25)
 
     (setq ivy-rich-switch-buffer-project-max-length 20)
 
