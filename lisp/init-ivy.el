@@ -11,6 +11,16 @@
                   '((man . "^")
                     (woman . "^")))
 
+    (require-package 'ivy-rich)
+    (ivy-set-display-transformer 'ivy-switch-buffer 'ivy-rich-switch-buffer-transformer)
+
+    (setq ivy-virtual-abbreviate 'full
+          ivy-rich-switch-buffer-align-virtual-buffer t)
+
+    (setq ivy-rich-switch-buffer-name-max-length 80)
+
+    (setq ivy-rich-switch-buffer-project-max-length 20)
+
     ;; IDO-style directory navigation
     (define-key ivy-minibuffer-map (kbd "RET") #'ivy-alt-done)
     (dolist (k '("C-j" "C-RET"))
