@@ -58,7 +58,7 @@
 
 
 
-(setq-default fill-column 80)
+(setq-default fill-column 72)
 
 
 
