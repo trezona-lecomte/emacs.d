@@ -38,14 +38,23 @@
 (add-hook 'after-init-hook 'transient-mark-mode)
 
 
- ;;; A simple visible bell which works in all terminal types
+
+;; Huge files
 
-(defun sanityinc/flash-mode-line ()
-  (invert-face 'mode-line)
-  (run-with-timer 0.05 nil 'invert-face 'mode-line))
+(require-package 'vlf)
 
-(setq-default
- ring-bell-function 'sanityinc/flash-mode-line)
+(defun ffap-vlf ()
+  "Find file at point with VLF."
+  (interactive)
+  (let ((file (ffap-file-at-point)))
+    (unless (file-exists-p file)
+      (error "File does not exist: %s" file))
+    (vlf file)))
+
+
+;;; A simple visible bell which works in all terminal types
+(require-package 'mode-line-bell)
+(add-hook 'after-init-hook 'mode-line-bell-mode)
 
 
 
