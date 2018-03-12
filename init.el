@@ -101,6 +101,7 @@
 (require 'init-haskell)
 (require 'init-elm)
 (require 'init-rspec-mode)
+(require 'init-coverage)
 (require 'init-feature-mode)
 (require 'init-rubocop)
 (require 'init-purescript)
