@@ -211,10 +211,4 @@
 (add-hook 'prog-mode-hook
           #'add-pragmatapro-prettify-symbols-alist)
 
-;; Turn on emojify-mode globally
-
-(when (fboundp 'global-emojify-mode)
-  (global-emojify-mode))
-
-
 (provide 'init-prettify-symbols)

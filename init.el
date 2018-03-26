@@ -73,7 +73,8 @@
 
 (require 'init-editing-utils)
 (require 'init-whitespace)
-(require 'init-prettify-symbols)
+(when *is-a-mac* ;; Haven't got ligatures working on Linux yet.
+  (require 'init-prettify-symbols))
 (require 'init-center-cursor)
 (require 'init-fonts)
 
