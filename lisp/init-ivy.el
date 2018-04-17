@@ -41,6 +41,8 @@
     (setq-default ivy-re-builders-alist
                   '((t . ivy--regex-fuzzy)))))
 
+(maybe-require-package 'ivy-hydra)
+
 (when (maybe-require-package 'ivy-historian)
   (add-hook 'after-init-hook (lambda () (ivy-historian-mode t))))
 
