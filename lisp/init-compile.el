@@ -57,6 +57,7 @@
       (ansi-color-apply-on-region compilation-filter-start (point-max))))
   (add-hook 'compilation-filter-hook 'sanityinc/colourise-compilation-buffer))
 
+(setq compilation-scroll-output 2)
 
 (maybe-require-package 'cmd-to-echo)
 

@@ -26,6 +26,19 @@
   (push 'ruby-mode page-break-lines-modes))
 
 (require-package 'rspec-mode)
+(require-package 'inf-ruby)
+
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
+
+;; (defun allow-input-in-compilation-buffer ()
+;;   "Override the default (read-only) for compilation buffers."
+;;   (progn
+;;     (switch-to-buffer-other-window rspec-compilation-buffer-name-base)
+;;     (toggle-read-only)))
+
+;; (add-hook 'rspec-compilation-mode-hook 'allow-input-in-compilation-buffer)
+
+(setq rspec-use-spring-when-possible nil)
 
 
 (define-derived-mode brewfile-mode ruby-mode "Brewfile"

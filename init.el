@@ -48,6 +48,7 @@
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'command-log-mode)
+(require-package 'coverage)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
@@ -76,7 +77,7 @@
 (require 'init-whitespace)
 
 (require 'init-vc)
-(require 'init-darcs)
+;; (require 'init-darcs)
 (require 'init-git)
 (require 'init-github)
 
@@ -89,7 +90,7 @@
 (require 'init-csv)
 (require 'init-erlang)
 (require 'init-javascript)
-(require 'init-php)
+;; (require 'init-php)
 (require 'init-org)
 (require 'init-nxml)
 (require 'init-html)
@@ -104,18 +105,18 @@
 (require 'init-rails)
 (require 'init-sql)
 (require 'init-rust)
-(require 'init-toml)
+;; (require 'init-toml)
 (require 'init-yaml)
 (require 'init-docker)
-(require 'init-terraform)
+;; (require 'init-terraform)
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
 
 (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-slime)
-(require 'init-clojure)
-(require 'init-clojure-cider)
+;; (require 'init-clojure)
+;; (require 'init-clojure-cider)
 (require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
@@ -128,11 +129,11 @@
 
 ;;(require 'init-twitter)
 ;; (require 'init-mu)
-(require 'init-ledger)
+;; (require 'init-ledger)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
-(require-package 'lua-mode)
+;; (require-package 'lua-mode)
 (require-package 'htmlize)
 (require-package 'dsvn)
 (when *is-a-mac*
@@ -171,7 +172,7 @@
 ;;----------------------------------------------------------------------------
 (require 'init-local nil t)
 
-
+(setq debug-on-error nil)
 
 (provide 'init)
 

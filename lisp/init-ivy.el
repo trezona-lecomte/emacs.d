@@ -2,15 +2,15 @@
 (when (maybe-require-package 'ivy)
   (add-hook 'after-init-hook 'ivy-mode)
   (after-load 'ivy
-    (setq-default ivy-use-virtual-buffers t
-                  ivy-virtual-abbreviate 'fullpath
-                  ivy-count-format ""
-                  projectile-completion-system 'ivy
-                  ivy-magic-tilde nil
-                  ivy-dynamic-exhibit-delay-ms 150
-                  ivy-initial-inputs-alist
-                  '((man . "^")
-                    (woman . "^")))
+    ;; (setq-default ivy-use-virtual-buffers t
+    ;;               ivy-virtual-abbreviate 'fullpath
+    ;;               ivy-count-format ""
+    ;;               projectile-completion-system 'ivy
+    ;;               ivy-magic-tilde nil
+    ;;               ivy-dynamic-exhibit-delay-ms 150
+    ;;               ivy-initial-inputs-alist
+    ;;               '((man . "^")
+    ;;                 (woman . "^")))
 
     ;; IDO-style directory navigation
     (define-key ivy-minibuffer-map (kbd "RET") #'ivy-alt-done)
@@ -77,5 +77,32 @@ instead."
 (when (maybe-require-package 'ivy-xref)
   (setq xref-show-xrefs-function 'ivy-xref-show-xrefs))
 
+(require-package 'ivy-rich)
+(require 'ivy-rich)
+(require-package 'all-the-icons)
+
+(defun ivy-rich-switch-buffer-icon (candidate)
+  (with-current-buffer
+      (get-buffer candidate)
+    (let ((icon (all-the-icons-icon-for-mode major-mode)))
+      (if (symbolp icon)
+          (all-the-icons-icon-for-mode 'fundamental-mode)
+        icon))))
+
+(setq ivy-rich--display-transformers-list
+      '(ivy-switch-buffer
+        (:columns
+         ((ivy-rich-switch-buffer-icon :width 4)
+          (ivy-rich-candidate (:width 40))
+          (ivy-rich-switch-buffer-indicators (:width 4 :face error :align right))
+          (ivy-rich-switch-buffer-project (:width 15 :face success))
+          (ivy-rich-switch-buffer-size (:width 7))
+          (ivy-rich-switch-buffer-path (:width (lambda (x) (ivy-rich-switch-buffer-shorten-path x (ivy-rich-minibuffer-width 0.3)))))
+
+          )
+         :predicate
+         (lambda (cand) (get-buffer cand)))))
+
+(ivy-rich-mode 1)
 
 (provide 'init-ivy)
