@@ -71,6 +71,7 @@
 (require 'init-windows)
 (require 'init-sessions)
 (require 'init-fonts)
+(require 'init-prettify-symbols)
 (require 'init-mmm)
 
 (require 'init-editing-utils)

@@ -15,9 +15,11 @@ This is helpful for writeroom-mode, in particular."
 (add-hook 'visual-fill-column-mode-hook
           'sanityinc/maybe-adjust-visual-fill-column)
 
-
-(add-to-list 'default-frame-alist
-             '(font . "PragmataPro Mono Liga 12"))
-
+;; Set default font
+(set-face-attribute 'default nil
+                    :family "PragmataPro Mono Liga"
+                    :height 160
+                    :weight 'normal
+                    :width 'normal)
 
 (provide 'init-fonts)
