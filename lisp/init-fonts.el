@@ -16,5 +16,8 @@ This is helpful for writeroom-mode, in particular."
           'sanityinc/maybe-adjust-visual-fill-column)
 
 
+(add-to-list 'default-frame-alist
+             '(font . "PragmataPro Mono Liga 12"))
+
 
 (provide 'init-fonts)
