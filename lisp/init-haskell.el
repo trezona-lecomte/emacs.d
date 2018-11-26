@@ -79,6 +79,7 @@
   (add-hook 'dhall-mode-hook 'sanityinc/no-trailing-whitespace)
   (add-hook 'dhall-mode-hook 'stack-exec-path-mode))
 
+(require-package 'shakespeare-mode)
 
 
 
