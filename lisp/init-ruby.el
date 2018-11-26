@@ -1,6 +1,7 @@
 ;;; Basic ruby setup
 (require-package 'ruby-mode)
 (require-package 'ruby-hash-syntax)
+(require-package 'rubocop)
 
 (add-auto-mode 'ruby-mode
                "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'"
@@ -31,6 +32,9 @@
 ;; (add-hook 'rspec-compilation-mode-hook 'allow-input-in-compilation-buffer)
 
 (setq rspec-use-spring-when-possible nil)
+(setq rspec-spec-command "rspec")
+(setq rspec-command-options nil)
+(setq rspec-use-opts-file-when-available nil)
 
 
 (define-derived-mode brewfile-mode ruby-mode "Brewfile"
