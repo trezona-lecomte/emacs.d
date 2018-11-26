@@ -1,4 +1,4 @@
-(setq-default compilation-scroll-output t)
+(setq-default compilation-scroll-output nil)
 
 (require-package 'alert)
 
