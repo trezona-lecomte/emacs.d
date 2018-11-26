@@ -2,15 +2,15 @@
 (when (maybe-require-package 'ivy)
   (add-hook 'after-init-hook 'ivy-mode)
   (after-load 'ivy
-    ;; (setq-default ivy-use-virtual-buffers t
-    ;;               ivy-virtual-abbreviate 'fullpath
-    ;;               ivy-count-format ""
-    ;;               projectile-completion-system 'ivy
-    ;;               ivy-magic-tilde nil
-    ;;               ivy-dynamic-exhibit-delay-ms 150
-    ;;               ivy-initial-inputs-alist
-    ;;               '((man . "^")
-    ;;                 (woman . "^")))
+    (setq-default ivy-use-virtual-buffers t
+                  ivy-virtual-abbreviate 'fullpath
+                  ivy-count-format ""
+                  projectile-completion-system 'ivy
+                  ivy-magic-tilde nil
+                  ivy-dynamic-exhibit-delay-ms 150
+                  ivy-initial-inputs-alist
+                  '((Man-completion-table . "^")
+                    (woman . "^")))
 
     ;; IDO-style directory navigation
     (define-key ivy-minibuffer-map (kbd "RET") #'ivy-alt-done)
@@ -30,7 +30,7 @@
                   '((t . ivy--regex-fuzzy)))))
 
 (when (maybe-require-package 'ivy-historian)
-  (add-hook 'after-init-hook (lambda () (ivy-historian-mode t))))
+  (add-hook 'after-init-hook 'ivy-historian-mode))
 
 (when (maybe-require-package 'counsel)
   (setq-default counsel-mode-override-describe-bindings t)
@@ -61,6 +61,8 @@ instead."
                            (projectile-project-root)
                          (error default-directory)))))
             (funcall search-function initial-input dir)))))
+    (after-load 'ivy
+      (add-to-list 'ivy-height-alist (cons 'counsel-ag 20)))
     (global-set-key (kbd "M-?") 'sanityinc/counsel-search-project)))
 
 

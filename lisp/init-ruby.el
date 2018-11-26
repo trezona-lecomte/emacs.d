@@ -12,14 +12,6 @@
  ruby-use-encoding-map nil
  ruby-insert-encoding-magic-comment nil)
 
-(after-load 'ruby-mode
-  ;; Stupidly the non-bundled ruby-mode isn't a derived mode of
-  ;; prog-mode: we run the latter's hooks anyway in that case.
-  (add-hook 'ruby-mode-hook
-            (lambda ()
-              (unless (derived-mode-p 'prog-mode)
-                (run-hooks 'prog-mode-hook)))))
-
 (add-hook 'ruby-mode-hook 'subword-mode)
 
 (after-load 'page-break-lines
@@ -69,10 +61,9 @@
 (when (maybe-require-package 'robe)
   (after-load 'ruby-mode
     (add-hook 'ruby-mode-hook 'robe-mode))
-  (after-load 'company
-    (dolist (hook (mapcar 'derived-mode-hook-name '(ruby-mode inf-ruby-mode html-erb-mode haml-mode)))
-      (add-hook hook
-                (lambda () (sanityinc/local-push-company-backend 'company-robe))))))
+  (after-load 'robe
+    (after-load 'company
+      (push 'company-robe company-backends))))
 
 
 
@@ -96,13 +87,11 @@
 
 ;;; ERB
 (require-package 'mmm-mode)
-(defun sanityinc/ensure-mmm-erb-loaded ()
-  (require 'mmm-erb))
 
 (require 'derived)
 
 (defun sanityinc/set-up-mode-for-erb (mode)
-  (add-hook (derived-mode-hook-name mode) 'sanityinc/ensure-mmm-erb-loaded)
+  (add-hook (derived-mode-hook-name mode) (lambda () (require 'mmm-erb)))
   (mmm-add-mode-ext-class mode "\\.erb\\'" 'erb))
 
 (let ((html-erb-modes '(html-mode html-erb-mode nxml-mode)))
