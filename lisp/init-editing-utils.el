@@ -1,6 +1,9 @@
 ;; -*- lexical-binding: t -*-
 (require-package 'unfill)
 
+(when (maybe-require-package 'synosaurus)
+  (add-auto-mode 'synosaurus-mode "\\.md\\.txt\\'"))
+
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode))
 (when (eval-when-compile (version< "24.4" emacs-version))
