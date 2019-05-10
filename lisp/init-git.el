@@ -40,7 +40,9 @@
 (after-load 'magit
   (define-key magit-status-mode-map (kbd "C-M-<up>") 'magit-section-up))
 
-(maybe-require-package 'magit-todos)
+(when (maybe-require-package 'magit-todos)
+  (after-load 'magit
+    (magit-todos-mode)))
 
 (require-package 'fullframe)
 (after-load 'magit
