@@ -36,7 +36,7 @@
 
 (setq rspec-use-spring-when-possible nil)
 (setq rspec-spec-command "rspec")
-(setq rspec-command-options nil)
+(setq rspec-command-options "--no-profile --order defined")
 (setq rspec-use-opts-file-when-available nil)
 
 
