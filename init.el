@@ -53,6 +53,7 @@
 (maybe-require-package 'scratch)
 (require-package 'command-log-mode)
 (require-package 'coverage)
+(setq-default coverage-highlight-eol t)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
