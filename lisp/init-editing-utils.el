@@ -89,19 +89,15 @@
   (diminish 'subword-mode))
 
 
+;; Relative line numbers
 
-(when (fboundp 'display-line-numbers-mode)
-  (setq-default display-line-numbers-width 3)
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode))
+(require-package 'nlinum-relative)
+(add-hook 'prog-mode-hook 'nlinum-relative-mode)
 
 (when (maybe-require-package 'goto-line-preview)
-  (global-set-key [remap goto-line] 'goto-line-preview)
+  (global-set-key [remap goto-line] 'goto-line-preview))
 
-  (when (fboundp 'display-line-numbers-mode)
-    (defun sanityinc/with-display-line-numbers (f &rest args)
-      (let ((display-line-numbers t))
-        (apply f args)))
-    (advice-add 'goto-line-preview :around #'sanityinc/with-display-line-numbers)))
+(setq-default truncate-lines t)
 
 
 (when (require-package 'rainbow-delimiters)
