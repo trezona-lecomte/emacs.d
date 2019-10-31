@@ -96,6 +96,7 @@
 (require 'init-csv)
 (require 'init-erlang)
 (require 'init-javascript)
+(require 'init-kotlin)
 ;; (require 'init-php)
 (require 'init-org)
 (require 'init-nxml)
