@@ -97,6 +97,7 @@
 (require 'init-erlang)
 (require 'init-javascript)
 (require 'init-kotlin)
+(require 'init-swift)
 ;; (require 'init-php)
 (require 'init-org)
 (require 'init-nxml)
