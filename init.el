@@ -53,6 +53,7 @@
 (maybe-require-package 'scratch)
 (require-package 'command-log-mode)
 (require-package 'coverage)
+(require-package 'crystal-mode)
 (setq-default coverage-highlight-eol t)
 
 (require 'init-frame-hooks)
