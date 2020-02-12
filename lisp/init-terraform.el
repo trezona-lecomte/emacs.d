@@ -7,7 +7,13 @@
 (when (maybe-require-package 'terraform-mode)
   (when (maybe-require-package 'company-terraform)
     (after-load 'terraform-mode
-      (company-terraform-init))))
+      (company-terraform-init)
+
+      ;; I find formatters based on "reformatter" to be more reliable
+      ;; so I redefine `terraform-format-on-save-mode' here.
+      (when (maybe-require-package 'reformatter)
+        (reformatter-define terraform-format
+          :program "terraform" :args '("fmt" "-"))))))
 
 (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
 
