@@ -93,8 +93,8 @@
 
 ;; Relative line numbers
 
-(require-package 'nlinum-relative)
-(add-hook 'prog-mode-hook 'nlinum-relative-mode)
+;; (require-package 'nlinum-relative)
+;; (add-hook 'prog-mode-hook 'nlinum-relative-mode)
 
 (when (maybe-require-package 'goto-line-preview)
   (global-set-key [remap goto-line] 'goto-line-preview))
