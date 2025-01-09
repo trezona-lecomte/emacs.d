@@ -3,6 +3,7 @@
 ;;; Code:
 
 (maybe-require-package 'json-mode)
+(maybe-require-package 'jsonl)
 (maybe-require-package 'js2-mode)
 (maybe-require-package 'typescript-mode)
 (maybe-require-package 'prettier-js)
